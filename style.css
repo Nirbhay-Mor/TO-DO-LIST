@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    min-height: 100vh;
+    width: 100%;
+    background : linear-gradient(to right, #6c757d 0%, #ced4da 100%);
+    padding: clamp(16px, 4vw, 48px) 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.todolist{
+    max-width: 560px;
+    width: 100%;
+    background:rgb(190, 189, 189);
+    margin: clamp(24px, 10vh, 100px) auto 20px;
+    padding: clamp(24px, 5vw, 40px) clamp(18px, 5vw, 30px) clamp(36px, 8vw, 70px);
+    border-radius: 20px;
+}
+.todolist h1{
+    color:black;
+    display:flex;
+    align-items: center;
+    margin-bottom: clamp(20px, 4vw, 30px);
+    font-size: clamp(1.6rem, 4vw, 2rem);
+}
+.todolist h1 img{
+    width: 40px;
+    margin-left: 10px;
+}
+.row{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background: beige;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    border-radius: 30px;
+    min-width: 0;
+}
+input{
+    flex:1;
+    min-width: 0;
+    border:none;
+    outline:none;
+    background: transparent;
+    padding: 10px;
+} 
+button{
+    border:none;
+    outline:none;
+    padding: 16px 50px;
+    background: rosybrown;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+ul li{
+color: black;
+font-size: 20px;
+list-style: none;
+padding: 12px 8px 12px 50px;
+user-select: none;
+cursor: pointer;
+position: relative;
+}
+ul li::before{
+content:'';
+position:absolute;
+height: 28px;
+width: 28px;
+border-radius: 50%;
+background-image: url(images/unchecked.png);
+background-size: cover;
+background-position: center;
+top: 12px; 
+left:8px;
+}
+ul li.checked{
+color: brown;
+text-decoration: line-through;
+}
+ul li.checked::before{
+background-image: url(images/checked.png);
+}
+ul li span {
+position: absolute;
+right: 0;
+top:5px;
+height: 40px;
+width: 40px;
+font-size: 22px;
+line-height: 40px;
+text-align: center;
+border-radius: 50%;
+}
+ul li span:hover{
+    background:#edeef0;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 16px 12px;
+    }
+
+    .todolist {
+        margin-top: 16px;
+        border-radius: 16px;
+    }
+
+    .row {
+        padding-left: 16px;
+    }
+
+    button {
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+
+    ul li {
+        font-size: 17px;
+        padding-right: 42px;
+    }
+}
+
+@media (max-width: 340px) {
+    .row {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 8px;
+        gap: 8px;
+        border-radius: 16px;
+    }
+
+    input {
+        padding: 10px 8px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
